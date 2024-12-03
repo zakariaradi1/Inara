@@ -42,8 +42,8 @@ body {
 }
 
 .left .social-login img {
-    width: 40px;
-    cursor: pointer;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .left .create-account {
@@ -70,6 +70,7 @@ body {
 .right .input-group label {
     display: block;
     margin-bottom: 5px;
+    display: flex;
 }
 
 .right .input-group input {
@@ -92,4 +93,25 @@ body {
     margin-top: 10px;
     color: #f0a500;
     cursor: pointer;
+}
+.input-group{
+    display: flex;
+    position: relative;
+}
+.input-group img{
+    width: 32px;
+}
+.ok{
+    position: absolute;
+    left: 10px;
+}
+input::placeholder{
+    text-align: center;
+}
+.imgpass{
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    top: 420px;
+    left: 743px;
 }
