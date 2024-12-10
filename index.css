@@ -6,24 +6,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white;
+    color: white; 
+     background-image: url('/issets/coulor.jpeg');
+    background-size: cover;
+    background-position: center; 
 }
-
 .container {
     display: flex;
     width: 800px;
     height: 500px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ 
 }
 
 .left {
     flex: 1;
-    background: linear-gradient(to bottom, #333, #1e3c72);
     padding: 40px;
-    color: white;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +48,6 @@ body {
     margin-top: 20px;
     color: white;
 }
-
 .right {
     flex: 1;
     padding: 40px;
@@ -113,5 +110,8 @@ input::placeholder{
     height: 1.5rem;
     width: 1.5rem;
     top: 420px;
-    left: 743px;
+    left: 773px;
+}
+.image_logo{
+
 }
