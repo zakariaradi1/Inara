@@ -2,9 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #333, #1e3c72);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
     height: 100vh;
     color: white; 
      background-image: url('/issets/coulor.jpeg');
@@ -60,17 +58,33 @@ body {
     margin-bottom: 20px;
 }
 
-.right .input-group {
+.right .input-group1 {
     margin-bottom: 20px;
 }
 
-.right .input-group label {
+.right .input-group1 label {
+    display: block;
+    margin-bottom: 5px;
+    display: flex;
+}
+.right .input-group2 {
+    margin-bottom: 20px;
+}
+
+.right .input-group2 label {
     display: block;
     margin-bottom: 5px;
     display: flex;
 }
 
-.right .input-group input {
+
+.right .input-group1 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.right .input-group2 input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -91,11 +105,18 @@ body {
     color: #f0a500;
     cursor: pointer;
 }
-.input-group{
+.input-group1{
     display: flex;
     position: relative;
 }
-.input-group img{
+.input-group2{
+    display: flex;
+    position: relative;
+}
+.input-group1 img{
+    width: 32px;
+}
+.input-group2 img{
     width: 32px;
 }
 .ok{
@@ -109,8 +130,7 @@ input::placeholder{
     position: absolute;
     height: 1.5rem;
     width: 1.5rem;
-    top: 420px;
-    left: 773px;
+   
 }
 .image_logo{
 
