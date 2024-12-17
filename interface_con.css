@@ -2,13 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-<<<<<<< HEAD
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, #f2994a, #2a5298, #1e3c72);
-=======
     background: linear-gradient(to bottom, #02095d,#0a1487 , #fafbfd);
     display: flex;
     justify-content: center;
@@ -17,7 +10,6 @@ body {
     color: white;
     background-size: cover;
     background-position: center; 
->>>>>>> cdbe90a57cb96d3ec3f3ad8f829a93dd64ce5121
 }
 .welcome-back {
     position: absolute;
