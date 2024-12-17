@@ -1,7 +1,11 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
+<<<<<<< HEAD
     background: linear-gradient(to bottom, #f2994a, #2a5298, #1e3c72);
+=======
+    background: linear-gradient(to top,#001d6e , #fbfafa );
+>>>>>>> efeeaa6324af40e0b07027a331a434448fd6c0d0
     color: white;
     display: flex;
     justify-content: center;
@@ -21,7 +25,7 @@ body {
   
   .left-section {
     flex: 1;
-    background: linear-gradient(to top, #001d6e, #ff6600);
+    background: linear-gradient(to top, #001d6e, #fffbf8);
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -49,7 +53,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top, #001d6e, #ff6600);
+    background: linear-gradient(to top, #001d6e, #ffffff);
   }
   
   .right-section h1 {
