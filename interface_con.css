@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #333, #1e3c72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white; 
+     background-image: url('/issets/coulor.jpeg');
+    background-size: cover;
+    background-position: center; 
+}
+.container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+ 
+}
+
+.left {
+    flex: 1;
+    padding: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.left .social-login {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.left .social-login img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.left .create-account {
+    margin-top: 20px;
+    color: white;
+}
+.right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right h2 {
+    margin-bottom: 20px;
+}
+
+.right .input-group {
+    margin-bottom: 20px;
+}
+
+.right .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.right .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.right .login-btn {
+    padding: 10px;
+    background: #f0a500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.right .forgot-password {
+    margin-top: 10px;
+    color: #f0a500;
+    cursor: pointer;
+}
+.input-group{
+    display: flex;
+    position: relative;
+}
+.input-group img{
+    width: 32px;
+}
+.ok{
+    position: absolute;
+    left: 10px;
+}
+input::placeholder{
+    text-align: center;
+}
+.imgpass{
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    top: 420px;
+    left: 773px;
+}
+.image_logo{
+
+}
