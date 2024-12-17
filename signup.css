@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to top, #ff6600, #001d6e);
+    background: linear-gradient(to bottom, #f2994a, #2a5298, #1e3c72);
     color: white;
     display: flex;
     justify-content: center;
@@ -34,6 +34,7 @@ body {
   .left-section .logo {
     height: 100px;
     margin-bottom: 20px;
+    
   }
   
   .left-section p {
@@ -62,8 +63,10 @@ body {
   }
   
   .signup-form {
-    width: 100%;
+    width: 50%;
     max-width: 400px;
+    
+
   }
   
   .input-group {
@@ -74,7 +77,7 @@ body {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
     color: white;
     font-size: 1rem;
