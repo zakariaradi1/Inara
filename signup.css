@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to top, #ff6600, #001d6e);
+    background: linear-gradient(to top,#001d6e , #fbfafa );
     color: white;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ body {
   
   .left-section {
     flex: 1;
-    background: linear-gradient(to top, #001d6e, #ff6600);
+    background: linear-gradient(to top, #001d6e, #fffbf8);
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top, #001d6e, #ff6600);
+    background: linear-gradient(to top, #001d6e, #ffffff);
   }
   
   .right-section h1 {

@@ -1,13 +1,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #333, #1e3c72);
+    background: linear-gradient(to bottom, #02095d,#0a1487 , #fafbfd);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white; 
-     background-image: url('/issets/coulor.jpeg');
+    color: white;
     background-size: cover;
     background-position: center; 
 }
