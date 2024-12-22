@@ -1,70 +1,84 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f2994a, #2a5298, #1e3c72);
+  background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   color: white;
 }
 
-.header {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.link {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
 .container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 15%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  background: linear-gradient(135deg, #0e0561, #0b0353, #f9f8fa);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
 }
 
 .container h1 {
   margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.container p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
 }
 
 .container input[type="email"] {
   padding: 15px;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   margin: 20px auto;
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
   text-align: center;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
 }
 
-.container button { padding: 10px 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    background-color: #f2994a;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+.container input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
+
+.container button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #f2994a;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
 .container button:hover {
-     background-color: #f2994a; /* Changer la couleur de fond au survol */ 
-     color: white; /* Changer la couleur du texte au survol */
+  background-color: #f5a85d;
+  color: white;
 }
-.container button:active { transform: translateY(5px); /* Effet enfoncé */ 
-    box-shadow: 0 2px 4px rgba(240, 98, 4, 0.2); /* Réduction de l'ombre */
+
+.container button:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px 4px rgba(240, 98, 4, 0.2);
 }
-.container p {
+
+.container .note {
   font-size: 12px;
-  color: rgb(7, 7, 116);
-  margin: 10px 0;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+}
+
+.container .note a {
+  color: #f2994a;
+  text-decoration: none;
+}
+
+.container .note a:hover {
+  text-decoration: underline;
 }
