@@ -3,52 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="interface_con.css">
+    <title>login page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./interface_con.css">
+    <link rel="icon" href="./public/assets/logo.png">
 </head>
 <body>
 
 <div class="container">
-    <!-- Partie gauche avec logo et boutons Google/Facebook -->
+    
     <div class="left-section">
-        <img src="assets/inara.png" alt="Logo" class="logo">
+        <img src="./public/assets/logo.png" alt="Logo" class="logo">
 
-        <!-- Trait de séparation -->
         <div class="separator">
             <hr class="line">
-            <span class="or-line"></span>
+            <span class="or">OR</span>
             <hr class="line">
         </div>
 
         <div class="social-login">
-            <img src="assets/Google.png" alt="Google" class="social-icon">
-            <img src="assets/facebook.png" alt="Facebook" class="social-icon">
+            <button class="social-btn google"><i class="fab fa-google"></i> Continue with Google</button>
+            <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Continue with Facebook</button>
         </div>
-        
-        <p>Don't have an account? <a href="#">Create Account</a></p>
+
+        <p>Don’t have an account? <a href="./signup.html">Create Account</a></p>
     </div>
 
-    <!-- Partie droite avec formulaire de connexion -->
+    <!-- Right section with account finding form -->
     <div class="right-section">
-        <h2 class="welcome-back">
-            <span class="welcome">Welcome</span>
-            <span class="back">Back 😊</span>
-        </h2>
-        
+        <h2 class="welcome">Welcome Back 🤗</h2>
 
-        <div class="input-container">
-            <input type="email" class="input-field" placeholder="Email">
-            <span class="icon user-icon"><i class="fas fa-user"></i></span>
-        </div>
-        <div class="input-container">
-            <input type="password" class="input-field" placeholder="Password">
-            <span class="icon lock-icon"><i class="fas fa-lock"></i></span>
-        </div>
+        <form class="find-account-form">
+            <div class="input-container">
+                <input type="email" class="input-field" placeholder="email" required>
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <input style="margin-top: 2rem;" type="password" class="input-field1" placeholder="password" required>
+                <span class="icon1"><i style='font-size:24px' class='fas'>&#xf023;</i>
+                </span>
+            </div>
 
-        <button class="login-btn">Log in</button>
+            <button type="submit" class="find-btn">Continue</button>
+        </form>
 
-        <a href="#" class="forgot-password">Forgot Password?</a>
+        <p class="note">forgot password? <a href="./mdpo.html">Reset password</a></p>
     </div>
 </div>
 
