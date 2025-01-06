@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+body.night-mode {
+    background: linear-gradient(to bottom, gray, rgb(47, 43, 43), #171618, hsl(0, 0%, 0%));
+    color: #ffffff;
+}
+
+body.night-mode .book-container {
+    background: linear-gradient(to bottom, gray, rgb(47, 43, 43), #171618, hsl(0, 0%, 0%));
+    color: #ffffff;
+}
+
+body.light-mode {
+    background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+    color: #ffffff;
+}
+
+body.light-mode .book-container {
+    background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+    color: #ffffff;
+}
+
+button.night-mode {
+    background-color: #444;
+    color: white;
+}
+
+button.light-mode {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.book-container {
+    text-align: center;
+    background: linear-gradient(135deg, #0e0561, #0b0353, #f9f8fa);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+.book h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.book p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 0;
+}
+
+.book input[type="number"],
+.book textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    margin: 20px auto;
+    width: calc(100% - 40px);
+    text-align: center;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+.book input[type="number"]::placeholder,
+.book textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.book button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f2994a;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.book button:hover {
+    background-color: #f5a85d;
+    color: white;
+}
+
+.book button:active {
+    transform: translateY(5px);
+    box-shadow: 0 2px 4px rgba(240, 98, 4, 0.2);
+}
+
+.note {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+}
+
+.note a {
+    color: #f2994a;
+    text-decoration: none;
+}
+
+.note a:hover {
+    text-decoration: underline;
+}
