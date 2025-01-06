@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='interfacebib.css') }}">
+    <script src="{{ url_for('static', filename='DarkLight.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo.png') }}">
+    <title>Bibliothèque</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <button class="menu-toggle"><i class="fas fa-bars"></i> Menu</button>
+                <ul>
+                    <li class="categories">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="{{ url_for('fict_psyco') }}">Fiction psychologique</a></li>
+                            <li><a href="{{ url_for('fict_histo') }}">Fiction historique</a></li>
+                            <li><a href="{{ url_for('fict_filo') }}">Fiction philosophique</a></li>
+                            <li><a href="{{ url_for('memoire') }}">Mémoires</a></li>
+                            <li><a href="{{ url_for('auto_biog_poli') }}">Autobiographie politique</a></li>
+                            <li><a href="{{ url_for('dev_pers_fin') }}">Développement personnel et finances</a></li>
+                            <li><a href="{{ url_for('dev_pers') }}">Développement personnel</a></li>
+                            <li><a href="{{ url_for('auto_biog') }}">Autobiographie</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('index') }}">Deconnexion</a></li>
+                </ul>
+            </div>
+                <div class="search-bar" style="display: flex; align-items: center;">
+                    <form action="{{ url_for('search_books') }}" method="post" style="display: flex; align-items: center;">
+                        <input type="text" name="search_query" placeholder="Search for books..." style="margin-right: 10px;">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            <div class="right-icons">
+                <button class="toggle-light-mode"><i class="fas fa-sun"></i></button>
+                <button class="toggle-night-mode"><i class="fas fa-moon"></i></button>
+                <a href="{{ url_for('reception_mail') }}">
+                    <button>
+                      <i class="fas fa-bell">
+                        {% if unread_messages_count > 0 %}
+                          <span class="notification-dot"></span>
+                        {% endif %}
+                      </i>
+                    </button>
+                  </a>                
+                <form action="{{ url_for('user_info') }}" method="post">
+                    <button type="submit"><i class="fas fa-user"></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="new-books">
+            <h2>New Books</h2>
+            <div class="books-container">
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/Crime-and-Punishment-Front-Cover-1.jpeg') }}" alt="Crime and Punishment">
+                    <h3>Crime and Punishment</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Crime and Punishment">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Crime and Punishment">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Crime and Punishment">
+                            <input type="hidden" name="book_id" value="1">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/vh.jpeg') }}" alt="Les Misérables">
+                    <h3>Les Misérables</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Misérables">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Misérables">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Misérables">
+                            <input type="hidden" name="book_id" value="2">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/karamazof.jpeg') }}" alt="Les Frères Karamazov">
+                    <h3>Les Frères Karamazov</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Frères Karamazov">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Frères Karamazov">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Les Frères Karamazov">
+                            <input type="hidden" name="book_id" value="3">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/nelson.png') }}" alt="Long Walk to Freedom">
+                    <h3>Long Walk to Freedom</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Long Walk to Freedom">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Long Walk to Freedom">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Long Walk to Freedom">
+                            <input type="hidden" name="book_id" value="4">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="recommended-books">
+            <h2>Recommended</h2>
+            <div class="books-container">
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/ahet.jpeg') }}" alt="Mein Kampf">
+                    <h3>AhetMein Kampf</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Mein Kampf">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Mein Kampf">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Rich Dad Poor Dad">
+                            <input type="hidden" name="book_id" value="5">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/rp.jpg') }}" alt="Rich Dad Poor Dad">
+                    <h3>Rich Dad Poor Dad</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Rich Dad Poor Dad">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Rich Dad Poor Dad">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Rich Dad Poor Dad">
+                            <input type="hidden" name="book_id" value="6">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/ah.jpeg') }}" alt="Atomic Habits">
+                    <h3>Atomic Habits</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="Atomic Habits">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="Atomic Habits">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="Atomic Habits">
+                            <input type="hidden" name="book_id" value="7">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="{{ url_for('static', filename='images/غلاف_الخبز_الحافي.jpeg') }}" alt="الخبزالحافي">
+                    <h3>الخبزالحافي</h3>
+                    <div class="book-actions">
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="book_title" value="الخبز الحافي">
+                            <button type="submit">Read</button>
+                        </form>
+                        <form action="{{ url_for('describe') }}" method="post">
+                            <input type="hidden" name="book_title" value="الخبز الحافي">
+                            <button type="submit">Description</button>
+                        </form>
+                        <form action="{{ url_for('evaluer') }}" method="post">
+                            <input type="hidden" name="book_title" value="الخبز الحافي">
+                            <input type="hidden" name="book_id" value="8">
+                            <button type="submit">Évaluer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuItems = document.querySelector('.menu ul');
+        
+            menuToggle.addEventListener('click', function() {
+                menuItems.classList.toggle('show');
+            });
+        });
+        
+</script>
+</body>
+</html>
