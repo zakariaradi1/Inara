@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='interfacebib.css') }}">
+    <script src="{{ url_for('static', filename='DarkLight.js') }}" defer></script>
+</head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+            height: auto ; 
+            min-height: 100vh; 
+            color: #fff;
+            transition: height 0.5s ease; 
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 100%;
+        }
+        button {
+        background: orange;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: background 0.3s;
+        margin-top: 2rem;
+        }
+
+        button:hover {
+        background: #e67e22;    
+        }
+        main {
+        align-items: right;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        max-width: 1200px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        margin-top: 10%;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+
+<body>
+    <header>
+        <nav>
+            <button><a href="{{ url_for('home') }}" style="text-decoration: none;color: rgb(255, 255, 255);">Home</a></button>
+        </nav>
+    </header>
+<div class="content">
+    <main>
+        <h1>Search Results</h1>
+        <ul>
+            {% if books %}
+                {% for book in books %}
+                <li style="display: flex;flex-direction: column;">
+                    <form action="{{ url_for('read') }}" method="post">
+                        <input type="hidden" name="book_title" value="{{ book['book_title'] }}">
+                        <button type="submit" style="text-decoration: none;color: white;">Link to Read 👉🏻 : {{ book['book_title'] }}</button>
+                    </form>
+                    <form action="{{ url_for('describe') }}" method="post">
+                        <input type="hidden" name="book_title" value="{{ book['book_title'] }}">
+                        <button type="submit" style="text-decoration: none;color: white;">Link to Description 👉🏻 : {{ book['book_title'] }}</button>
+                    </form>
+                    <form action="{{ url_for('evaluer') }}" method="post">
+                        <input type="hidden" name="book_title" value="{{ book['book_title'] }}">
+                        <button type="submit" style="text-decoration: none;color: white;">Link to Evaluer 👉🏻 : {{ book['book_title'] }}</button>
+                    </form>
+                </li>
+                {% endfor %}
+            {% else %}
+                <p>No books found for your search.</p>
+            {% endif %}
+        </ul>
+    </main></div>
+</body>
+</html>
