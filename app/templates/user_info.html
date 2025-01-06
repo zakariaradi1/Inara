@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='interfacebib.css') }}">
+    <script src="{{ url_for('static', filename='DarkLight.js') }}" defer></script>
+    <title>User Info</title>
+</head>
+    <style>
+         body {
+            background: linear-gradient(to bottom, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+            height: 100vh; 
+        }
+        button {
+        background: orange;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: background 0.3s;
+        }
+        button:hover {
+            background: #e67e22;    
+        }
+        main {
+            align-items: right;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            margin-top: 15%;
+        }
+    </style>
+<body>
+    <header>
+        <nav>
+            <button><a href="{{ url_for('home') }}" style="text-decoration: none;color: rgb(255, 255, 255);">Home</a></button>
+        </nav>
+    </header>
+    <main>
+        {% if account %}
+            <h1>Welcome : {{ account['Nom'] }}</h1>
+            <p><strong>Email : </strong> {{ account['Email'] }}</p>
+            <p><strong>Account id : </strong> {{ account['id_user'] }}</p>
+        {% else %}
+            <p>Account not found.</p>
+        {% endif %}
+    <li style="display: flex;flex-direction: row;gap: 2%;">
+        <button style="width: 50%;height: 2rem;margin-top: 3rem;"><a href="{{ url_for('change_email_page') }}" style="text-decoration: none;color: rgb(255, 255, 255);">Change Email</a></button>
+        <button style="margin-top: 3rem;width: 50%;height: 2rem;"><a href="{{ url_for('reset_page') }}" style="text-decoration: none;color: rgb(255, 255, 255);">Change Password</a></button>
+    </li>
+</main>
+</body>
+</html>
