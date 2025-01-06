@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reception Mail</title>
+    <script src="{{ url_for('static', filename='DarkLight.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='interfacebib.css') }}">
+</head>
+<style>
+/* Your existing styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+    height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+button {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #e67e22;
+}
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+main {
+    align-items: right;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 10%;
+}
+</style>
+<body>
+    <header>
+        <h1>Reception Mail</h1>
+        <button><a href="{{ url_for('home') }}">Home</a></button>
+    </header>
+    <main>
+        <h1>INBOX</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div id="email-list">
+            {% for email in emails %}
+                <div>
+                    <p><strong>From : </strong> {{ email.sender }}</p>
+                    <p><strong>Subject : </strong> {{ email.subject }}</p>
+                    <p><strong>email content : </strong> {{ email.content }}</p>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ email.id }}">
+                        <button name="action" value="mark_read">Mark as Read</button>
+                        <button name="action" value="delete">Delete</button>
+                    </form>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
