@@ -1,0 +1,76 @@
+<!-- templates/book_description.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Description</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='interfacebib.css') }}">
+    <script src="{{ url_for('static', filename='DarkLight.js') }}" defer></script>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(140deg, rgb(255, 185, 55), hsl(237, 36%, 76%), #0e0666, #0e0561, hsl(234, 40%, 90%), rgb(255, 185, 55));
+    height: 100vh;
+    color: #fff;
+    }
+    button {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s;
+    }
+
+    button:hover {
+    background: #e67e22;    
+    }
+    main {
+    align-items: right;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 15%;
+    }
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+ 
+<body>
+    <header>
+        <nav>
+                <button><a href="{{ url_for('home') }}" style="text-decoration: none;color: rgb(255, 255, 255);">Home</a></button>
+        </nav>
+    </header>
+
+    <main>
+        {% if book %}
+            <h1>{{ book['book_title'] }}</h1>
+            <p><strong>Author:</strong> {{ book['book_author'] }}</p>
+            <p><strong>Description:</strong> {{ book['book_description'] }}</p>
+            <p><strong>creation time:</strong> {{ book['book_creation'] }}</p>
+            <p><strong>Categorie:</strong> {{ book['book_categorie'] }}</p>
+            <p><strong>Book Rating:</strong> {{ book['book_rating']|round(1) }}</p>
+        {% else %}
+            <p>Book not found.</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Book Library</p>
+    </footer>
+</body>
+</html>
